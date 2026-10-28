@@ -1,0 +1,47 @@
+/* =========================================================
+   HidrauMeister · Componentes
+   Peças reutilizáveis: botões, WhatsApp flutuante e lightbox.
+   ========================================================= */
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5em;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-weight: 600; font-size: 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform .2s, background .2s, color .2s, box-shadow .2s, border-color .2s;
+  font-family: var(--font);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn--primary { background: var(--blue); color: #fff; box-shadow: 0 8px 22px rgba(0, 153, 219, .35); }
+.btn--primary:hover { background: var(--blue-600); }
+.btn--ghost { border-color: rgba(255,255,255,.35); color: #fff; }
+.btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+.btn--outline { border-color: var(--blue); color: var(--blue); background: transparent; }
+.btn--outline:hover { background: var(--blue); color: #fff; }
+.btn--white { background: #fff; color: var(--blue-600); }
+.btn--white:hover { box-shadow: 0 10px 26px rgba(0,0,0,.2); }
+.btn--sm { padding: 10px 20px; font-size: .95rem; }
+
+/* ---------- WhatsApp flutuante ---------- */
+.wa-float {
+  position: fixed; right: 22px; bottom: 22px; z-index: 60;
+  width: 58px; height: 58px; border-radius: 50%; background: #25d366;
+  display: grid; place-items: center; box-shadow: 0 10px 26px rgba(37,211,102,.45);
+  transition: transform .2s;
+}
+.wa-float:hover { transform: scale(1.08); }
+.wa-float svg { width: 30px; height: 30px; fill: #fff; }
+
+/* ---------- Lightbox ---------- */
+.lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(6,10,15,.92); display: flex; align-items: center; justify-content: center; padding: 30px; }
+.lightbox[hidden] { display: none; }
+.lightbox figure { margin: 0; max-width: 720px; width: 100%; text-align: center; }
+.lightbox img { max-height: 75vh; margin: 0 auto; border-radius: 12px; background: linear-gradient(#e7ecf0, #b9cad6); }
+.lightbox figcaption { color: #fff; margin-top: 14px; font-family: var(--font-display); font-size: 1.4rem; }
+.lightbox button { background: rgba(255,255,255,.1); color: #fff; border: 0; cursor: pointer; border-radius: 50%; transition: background .2s; }
+.lightbox button:hover { background: var(--blue); }
+.lightbox__close { position: absolute; top: 20px; right: 20px; width: 46px; height: 46px; font-size: 1.8rem; line-height: 1; }
+.lightbox__nav { width: 52px; height: 52px; font-size: 2rem; line-height: 1; flex-shrink: 0; margin: 0 14px; }

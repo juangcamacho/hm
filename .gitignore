@@ -1,0 +1,10 @@
+# Material original da empresa (não publicar)
+referencias/
+
+# Versão de arquivo único gerada por tools/build-standalone.py
+dist/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini

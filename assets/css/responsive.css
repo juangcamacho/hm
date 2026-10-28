@@ -1,0 +1,67 @@
+/* =========================================================
+   HidrauMeister · Responsivo
+   Ajustes para tablet (≤1024px), celular grande (≤900px) e celular (≤560px).
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .nav__menu { gap: 20px; }
+  .parts-list, .features { grid-template-columns: 1fr 1fr; }
+  .feature:nth-child(2) { border-right: 0; }
+  .feature:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .footer__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 900px) {
+  .topbar__inner > span { display: none; }
+  .topbar__inner { justify-content: center; }
+  .nav__toggle { display: block; }
+  .nav__menu {
+    position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: #fff; border-bottom: 1px solid var(--line); box-shadow: var(--shadow-lg);
+    padding: 10px 24px 24px;
+    max-height: 0; overflow: hidden; opacity: 0; pointer-events: none;
+    transition: max-height .35s, opacity .25s;
+  }
+  .nav__menu.is-open { max-height: 480px; opacity: 1; pointer-events: auto; }
+  .nav__menu li a:not(.btn) { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .nav__menu li:last-child { margin-top: 16px; }
+  .nav__menu .btn { width: 100%; }
+  .nav { position: relative; }
+
+  .hero { padding: 70px 0 110px; }
+  .hero__inner, .about, .services, .contact { grid-template-columns: 1fr; gap: 50px; }
+  .hero__visual { min-height: 300px; }
+  .hero__ring { width: 300px; height: 300px; }
+  .stats__grid { grid-template-columns: 1fr 1fr; }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .cards3, .fab { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .cta__inner { flex-direction: column; align-items: flex-start; }
+  .about__media { max-width: 520px; }
+  .about__tag { right: 10px; }
+  .section { padding: 80px 0; }
+}
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .container { padding: 0 16px; }
+  .topbar__links a:last-child { display: none; }
+  .hero__badge { position: static; margin-top: 16px; max-width: none; }
+  .hero__visual { flex-direction: column; }
+  .stat { padding: 20px 16px; }
+  .stat strong { font-size: 1.9rem; }
+  .checklist, .service-list, .form__row, .parts-list, .features, .steps, .footer__grid { grid-template-columns: 1fr; }
+  .feature { border-right: 0; border-bottom: 1px solid var(--line); }
+  .feature:last-child { border-bottom: 0; }
+  .parts { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .part figcaption { padding: 10px 12px; font-size: .85rem; }
+  .services__gallery { grid-template-rows: 150px 150px 150px; }
+  .form { padding: 24px; }
+  .form__actions .btn { width: 100%; }
+  .about__media::before { inset: 14px -10px -14px 14px; }
+  .lightbox__nav { position: absolute; bottom: 24px; margin: 0; }
+  .lightbox__prev { left: 24px; }
+  .lightbox__next { right: 24px; }
+}

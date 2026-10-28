@@ -1,0 +1,52 @@
+/* =========================================================
+   HidrauMeister · Layout
+   Estrutura global: cabeçalho, seções e rodapé.
+   ========================================================= */
+
+/* ---------- Cabeçalho ---------- */
+.header { position: sticky; top: 0; z-index: 50; }
+.topbar { background: var(--dark); color: #b8c2cc; font-size: .85rem; }
+.topbar__inner { display: flex; justify-content: space-between; align-items: center; height: 38px; gap: 16px; }
+.topbar__links { display: flex; gap: 24px; }
+.topbar a:hover { color: #fff; }
+
+.nav { background: rgba(255,255,255,.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); transition: box-shadow .3s; }
+.header.is-scrolled .nav { box-shadow: 0 6px 24px rgba(15,23,32,.08); }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 78px; }
+.nav__logo img { height: 52px; width: auto; }
+.nav__menu { list-style: none; display: flex; align-items: center; gap: 30px; margin: 0; padding: 0; }
+.nav__menu a:not(.btn) {
+  font-weight: 500; color: var(--ink); position: relative; padding: 6px 0;
+}
+.nav__menu a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 0;
+  background: var(--blue); transition: width .25s;
+}
+.nav__menu a:not(.btn):hover::after, .nav__menu a.is-active::after { width: 100%; }
+.nav__menu a.is-active { color: var(--blue); }
+.nav__toggle { display: none; background: none; border: 0; width: 44px; height: 44px; cursor: pointer; padding: 10px; }
+.nav__toggle span { display: block; height: 2px; background: var(--ink); margin: 6px 0; transition: .3s; }
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ---------- Seções ---------- */
+.section { padding: 110px 0; }
+.section--alt { background: var(--bg-alt); }
+.section--dark { background: var(--dark); color: #b8c4cf; }
+.section--dark h2, .section--dark h4 { color: #fff; }
+.section__head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+.section__head .eyebrow { padding-left: 0; }
+.section__head .eyebrow::before { display: none; }
+.section__head p { color: var(--muted); font-size: 1.08rem; }
+.section__head--light p { color: #9fadba; }
+
+/* ---------- Rodapé ---------- */
+.footer { background: var(--dark); color: #9fadba; padding: 70px 0 0; font-size: .95rem; }
+.footer__grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 50px; }
+.footer__logo { background: #fff; display: inline-block; padding: 10px 14px; border-radius: 10px; margin-bottom: 16px; }
+.footer__logo img { height: 50px; width: auto; }
+.footer h5 { color: #fff; font-size: 1.15rem; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+.footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.footer a:hover { color: #5cc6f2; }
+.footer__bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 22px 24px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: .85rem; }

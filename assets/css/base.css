@@ -1,0 +1,80 @@
+/* =========================================================
+   HidrauMeister · Base
+   Variáveis da marca, reset, tipografia e utilitários.
+   ========================================================= */
+
+:root {
+  --blue: #0099db;
+  --blue-600: #0080ba;
+  --blue-50: #e8f6fd;
+  --gray: #96989a;
+  --ink: #0f1720;
+  --ink-2: #3c4651;
+  --muted: #6b7580;
+  --line: #e3e7eb;
+  --bg: #ffffff;
+  --bg-alt: #f4f6f8;
+  --dark: #0a121b;
+  --dark-2: #111c27;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(15, 23, 32, .08);
+  --shadow-lg: 0 24px 60px rgba(15, 23, 32, .16);
+  --container: 1200px;
+  --font: "Barlow", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Barlow Condensed", "Barlow", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 0 0 .5em;
+  font-weight: 700;
+  letter-spacing: .2px;
+}
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.3rem; font-weight: 600; }
+p { margin: 0 0 1em; }
+
+.container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: .95rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 14px;
+  padding-left: 34px; position: relative;
+}
+.eyebrow::before {
+  content: ""; position: absolute; left: 0; top: 50%;
+  width: 24px; height: 2px; background: currentColor;
+}
+.eyebrow--light { color: #5cc6f2; }
+.hl { color: var(--blue); }
+
+/* ---------- Animações de entrada ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: none; }
+.no-js .reveal { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero__truck { animation: none; }
+}
