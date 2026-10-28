@@ -45,7 +45,7 @@
     if (!logo) return;
     logo.addEventListener('click', function (e) {
       e.preventDefault();
-      window.scrollTo({ top: 0 });   // suave via CSS (scroll-behavior)
+      window.scrollTo({ top: 0, behavior: 'instant' });   // salto direto, sem animação
       if (location.hash) history.replaceState(null, '', location.pathname + location.search);
     });
   }
