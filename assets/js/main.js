@@ -37,6 +37,19 @@
     onScroll();
   }
 
+  /* ---------- Logo volta ao topo ----------
+     O alvo #topo é o próprio cabeçalho sticky, que nunca sai da
+     tela; por isso o salto pela âncora não chegava ao topo. */
+  function initLogo() {
+    var logo = $('.nav__logo');
+    if (!logo) return;
+    logo.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0 });   // suave via CSS (scroll-behavior)
+      if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    });
+  }
+
   /* ---------- Menu mobile ---------- */
   function initMobileMenu() {
     var toggle = $('.nav__toggle');
@@ -260,6 +273,7 @@
   document.documentElement.classList.remove('no-js');
   initYear();
   initHeader();
+  initLogo();
   initMobileMenu();
   initActiveLink();
   initReveal();
