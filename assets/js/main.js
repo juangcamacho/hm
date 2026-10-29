@@ -9,7 +9,7 @@
 
   /* ---------- Configuração ---------- */
   var CONFIG = {
-    whatsapp: '5511941940319',          // número que recebe o formulário
+    whatsapp: '5519998491811',          // número que recebe o formulário
     email: 'hidraumeister@gmail.com',
     scrollShadowOffset: 10,             // px rolados até o cabeçalho ganhar sombra
     counterDuration: 1400               // ms da animação dos números
