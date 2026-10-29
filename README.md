@@ -50,4 +50,4 @@ Para mandar o site para alguém como um arquivo só, rode `python tools/build-st
 - **Nova peça no catálogo:** salve a foto em `assets/img/pecas/` e copie um bloco `<figure class="part">` no `index.html`. O atributo `data-cat` define o filtro: `desgaste`, `tubos`, `hidraulica` ou `vedacao`.
 - **Ordem dos CSS:** os arquivos são carregados na ordem base → layout → componentes → seções → responsivo. O responsivo precisa ser o último.
 
-O site carrega duas coisas externas: as fontes do Google Fonts e o mapa do Google Maps.
+O site carrega uma única coisa externa: as fontes do Google Fonts.
